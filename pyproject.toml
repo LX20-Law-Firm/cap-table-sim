@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cap-table-sim"
+version = "0.1.0"
+description = "Round dilution and instrument conversion calculations."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "Apache-2.0"}
+authors = [{name = "LX20 Law Firm", email = "noreply@lx20lawfirm.com"}]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["ruff==0.17.5"]
+
+[project.urls]
+Repository = "https://github.com/LX20-Law-Firm/cap-table-sim"
+
+[tool.setuptools.packages.find]
+include = ["cap_table_sim*"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]

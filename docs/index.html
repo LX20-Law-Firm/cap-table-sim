@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cap table simulator | LX20 Law Firm</title><link rel="stylesheet" href="style.css"></head>
+<body><main><header><p class="eyebrow">LX20 Law Firm</p><h1>Cap table simulator</h1><p>Round dilution, simultaneous conversion and employee pool calculations. Decimal inputs are strings; outputs are exact fractions.</p></header>
+<p> <a href="https://github.com/LX20-Law-Firm/cap-table-sim#readme">Formulas and conventions</a></p>
+<form id="calculator"><label for="inputs">Inputs (JSON)</label>
+<textarea id="inputs" spellcheck="false" rows="18">{
+  "holdings": {
+    "Founder": "1000"
+  },
+  "pre_money": "10000",
+  "investment": "2000",
+  "instruments": [
+    {
+      "holder": "SAFE holder",
+      "principal": "1000",
+      "cap": "5000",
+      "discount": "0.2"
+    },
+    {
+      "holder": "Note holder",
+      "principal": "1000",
+      "discount": "0.2",
+      "annual_interest": "0.1",
+      "years": "2",
+      "kind": "note"
+    }
+  ],
+  "pool_target": "0.2",
+  "pool_timing": "pre",
+  "quantum": null,
+  "investor": "Round investor",
+  "unit": "SPA shares"
+}</textarea>
+<button type="submit">Calculate</button></form>
+<section aria-labelledby="result-title"><h2 id="result-title">Result</h2><pre id="output" role="status" aria-live="polite">Enter inputs and calculate.</pre></section>
+<p>Amounts use one currency. Examples are synthetic inputs. All calculations run in this browser.</p>
+<noscript>Enable JavaScript to calculate, or use the Python package.</noscript>
+</main><script src="calculator.js"></script><script src="ui.js"></script></body></html>
